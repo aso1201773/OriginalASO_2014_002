@@ -40,7 +40,7 @@ public class MaintenanceActivity extends Activity implements
 
 		Button btnMainte_Back = (Button)findViewById(R.id.btnMAINTE_BACK);
 
-		Button lstHitokoto = (Button)findViewById(R.id.lstHITOKOTO);
+		ListView lstHitokoto = (ListView)findViewById(R.id.LvHitokoto);
 
 		btnDelete.setOnClickListener(this);
 		btnMainte_Back.setOnClickListener(this);
@@ -49,7 +49,7 @@ public class MaintenanceActivity extends Activity implements
 
 		this.setDBValuetoList(lstHitokoto);
 	}
-	
+
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long vievid) {
 		// TODO 自動生成されたメソッド・スタブ
@@ -71,7 +71,7 @@ public class MaintenanceActivity extends Activity implements
 
 			if(this.selectedID != -1){
 				this.deleteFromHitokoto(this.selectedID);
-				ListView lstHitokoto = (ListView)findViwById(R.id.LvHitokoto);
+				ListView lstHitokoto = (ListView)findViewById(R.id.LvHitokoto);
 
 				this.setDBValuetoList(lstHitokoto);
 				this.selectedID = -1;
@@ -83,23 +83,22 @@ public class MaintenanceActivity extends Activity implements
 		break;
 			case R.id.btnMAINTE_BACK:
 				finish();
-				break;
 		}
 
 
 
 
 	}
-		
+
 	private void deleteFromHitokoto(int id){
 		if(sdb == null){
 			helper = new MySQLiteOpenHelper(getApplicationContext());
-			
+
 		}
 		try{
 			sdb = helper.getWritableDatabase();
 		}catch(SQLiteException e){
-			
+
 			Log.e("ERROR",e.toString());
 		}
 		this.helper.deleteHitokoto(sdb,id);
@@ -139,6 +138,6 @@ public class MaintenanceActivity extends Activity implements
 
 
 
-	}
+}
 
 
