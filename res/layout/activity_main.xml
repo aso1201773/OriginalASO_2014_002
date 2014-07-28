@@ -9,56 +9,57 @@
     tools:context=".MainActivity" >
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/txt"
-            android:layout_width="278dp"
-            android:layout_height="36dp"
-            android:text="      今日の一言"
-            android:textSize="33sp" />
+            android:id="@+id/textView1"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:text="今日の一言" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:text="　　　　　　ひとことを登録" />
+            android:text="ひとことを登録" />
 
         <EditText
             android:id="@+id/edtMsg"
+            android:layout_width="272dp"
+            android:layout_height="77dp" >
+
+            <requestFocus />
+        </EditText>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="87dp"
-            android:layout_weight="0.23"
-            android:ems="10" />
+            android:layout_height="wrap_content"
+            android:layout_weight="2.87" >
+
+            <Button
+                android:id="@+id/mente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="メンテ" />
+
+            <Button
+                android:id="@+id/touroku"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登録" />
+
+        </LinearLayout>
 
         <Button
-            android:id="@+id/mente"
-            android:layout_width="107dp"
+            android:id="@+id/hitokoto"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="47dp"
-            android:layout_weight="0.44"
-            android:text="メンテ" />
+            android:text="ひとことチェック" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/hitokoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/touroku"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="42dp"
-        android:text="ひとことチェック" />
-
-    <Button
-        android:id="@+id/touroku"
-        android:layout_width="107dp"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/linearLayout1"
-        android:layout_centerVertical="true"
-        android:text="登録" />
 
 </RelativeLayout>
